@@ -4,9 +4,6 @@
 
 <!-- Toggleable sidebar -->
 <div class="sidebar" id="sidebar">
-  <div class="sidebar-item">
-    <p>{{ blog_title }} &mdash; {{ blog_description }} </p>
-  </div>
 
   <nav class="sidebar-nav">
     <!-- The code below dynamically generates a sidebar nav of pages with -->
@@ -16,15 +13,22 @@
     {% for link, name in pages_list %}
       <a class="sidebar-nav-item{% if permalink == link %} active{% endif %}" href="{{ link }}">{{ name }}</a>
     {% endfor %}
-
   </nav>
 
   <div class="sidebar-item">
     <p>
       {{ search_form }}
     </p>
-    <p>
-      {{ content_footer }}
-    </p>
+  </div>
+  <div class="sidebar-social">
+    <ul>
+      <li><a href="https://github.com/bricewge"><i class="fa fa-github fa-3x"></i></a></li>
+      <li><a href="mailto:{{ email }}"><i class="fa fa-envelope-o fa-3x"></i></a></li>
+      <li><a href="/rss.xml"><i class="fa fa-rss fa-3x"></i></a></li>
+    </ul>
+  </div>
+
+  <div class="sidebar-license">
+    {{ license }}
   </div>
 </div>
